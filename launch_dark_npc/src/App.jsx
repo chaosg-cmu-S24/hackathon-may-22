@@ -4,10 +4,10 @@
     import { withLDProvider, useFlags } from 'launchdarkly-react-client-sdk';
 
     import AWS from "aws-sdk";
-    const REGION = "us-west-2"; // e.g., "us-west-2"
-    const ACCESS_KEY_ID = "ASIATPJQO7YDQDWQA7WM";
-    const SECRET_ACCESS_KEY = "JhHBFHxYNXkSJEc2WHOzf0uhvs8ruqlQMGLCO4xC";
-    const SESSION_TOKEN = "IQoJb3JpZ2luX2VjEOr//////////wEaCXVzLWVhc3QtMSJIMEYCIQDFWZsi7WzOryjGOC/QuwE96QBjJVOuYfjiBcYwhWq5UgIhAOVZ+RSgiWdVIHyfZNhOreRsIEe+4SARBTLdQthbFthkKpkCCGMQAhoMMjM5MDA5MjAxNjcxIgxHN7OAtRq+3F30WPEq9gFnn9Ha5gYCbFR7FdoEnkdQg628BSzKNjsgGwOkcriZ5M5ZHLeCL9vr14SSNhSMv/zwiebl6Sto+0TFEr+q0LYQ0dNqu6swimxOw5A4xfOfoRr+nAAPWsdwL5o6lh5x0xwbGXYkAH5V3cem6VqS2yusFA7K51ethBCwQPdQoEaa6k9gS9guytE9ZLCbpZPp4Pg28yySMDwwT0cDyeWs/3yaseO1au/4CLqG+55Eq9Jh8d9sehzOY8//Ab3hc0mrsekX/9X7r5HRFeGRdlbj27cjBLD0vCfssUsrsxP9mluFlZFLjH/rrj2G91BtFrq4koBI2RWRVH4wsNa4sgY6nAFkcFY0HegN72eZjEpd7Ayoy1o71eyNM0QhIH1ZrsmBtqXsWZSyZIwZEgG/Z1Dfjrw7aTAoaOZInrK3JlWpoysKly3kf+lTDOJDBjKcRTsFMPfJMe9keMfocbOKN7sPQvpjUGJWO0rnu+J14afOZuhcQztrNfOahlrd44DhRsqCQkg+lYzIQObzQae+8oGDk8r09v4Jb3lzxkbVZPs=";
+        const REGION = "us-west-2"; // e.g., "us-west-2"
+        const ACCESS_KEY_ID = "ASIATPJQO7YDQDWQA7WM";
+        const SECRET_ACCESS_KEY = "JhHBFHxYNXkSJEc2WHOzf0uhvs8ruqlQMGLCO4xC";
+        const SESSION_TOKEN = "IQoJb3JpZ2luX2VjEOr//////////wEaCXVzLWVhc3QtMSJIMEYCIQDFWZsi7WzOryjGOC/QuwE96QBjJVOuYfjiBcYwhWq5UgIhAOVZ+RSgiWdVIHyfZNhOreRsIEe+4SARBTLdQthbFthkKpkCCGMQAhoMMjM5MDA5MjAxNjcxIgxHN7OAtRq+3F30WPEq9gFnn9Ha5gYCbFR7FdoEnkdQg628BSzKNjsgGwOkcriZ5M5ZHLeCL9vr14SSNhSMv/zwiebl6Sto+0TFEr+q0LYQ0dNqu6swimxOw5A4xfOfoRr+nAAPWsdwL5o6lh5x0xwbGXYkAH5V3cem6VqS2yusFA7K51ethBCwQPdQoEaa6k9gS9guytE9ZLCbpZPp4Pg28yySMDwwT0cDyeWs/3yaseO1au/4CLqG+55Eq9Jh8d9sehzOY8//Ab3hc0mrsekX/9X7r5HRFeGRdlbj27cjBLD0vCfssUsrsxP9mluFlZFLjH/rrj2G91BtFrq4koBI2RWRVH4wsNa4sgY6nAFkcFY0HegN72eZjEpd7Ayoy1o71eyNM0QhIH1ZrsmBtqXsWZSyZIwZEgG/Z1Dfjrw7aTAoaOZInrK3JlWpoysKly3kf+lTDOJDBjKcRTsFMPfJMe9keMfocbOKN7sPQvpjUGJWO0rnu+J14afOZuhcQztrNfOahlrd44DhRsqCQkg+lYzIQObzQae+8oGDk8r09v4Jb3lzxkbVZPs=";
 
 
     function App() {
