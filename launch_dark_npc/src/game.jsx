@@ -1,6 +1,8 @@
     import React, { useEffect, useState } from 'react';
     import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime";
     import { Buffer } from 'buffer';
+    import { withLDProvider, useFlags } from 'launchdarkly-react-client-sdk';
+
     import AWS from "aws-sdk";
     const REGION = "us-west-2"; // e.g., "us-west-2"
     const ACCESS_KEY_ID = "ASIATPJQO7YDQDWQA7WM";
@@ -12,6 +14,7 @@
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
     const [client, setClient] = useState(null);
+    const { firstTry } = useFlags();
 
     useEffect(()=>{
 
