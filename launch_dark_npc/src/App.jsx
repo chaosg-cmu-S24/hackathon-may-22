@@ -14,17 +14,9 @@
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
     const [client, setClient] = useState(null);
-    // const { firstTry } = useFlags();
+    const { firstTry } = useFlags();
 
     useEffect(()=>{
-        // console.log("firstTry", firstTry);
-        // AWS.config.update({
-        //     accessKeyId: ACCESS_KEY_ID,
-        //     secretAccessKey: SECRET_ACCESS_KEY,
-        //     sessionToken: SESSION_TOKEN,
-        //     region: REGION,
-        //   });
-          
         const bedrockClient = new BedrockRuntimeClient({
             region: REGION,
             credentials: {
@@ -41,25 +33,32 @@
         setPrompt(e.target.value);
     };
 
-    
+    let answer = "";
 
     const handleGenerateClick = async () => {
         try {
 
-        const prompt = ""
-        const request = {
-            "modelId": "meta.llama3-70b-instruct-v1:0",
-            "contentType": "application/json",
-            "accept": "application/json",
-            "body": "{\"prompt\":\"w ho is the first us president\",\"max_gen_len\":512,\"temperature\":0.5,\"top_p\":0.9}"
-        }
+          let question = "";
+          if (prompt.includes("Christmas")) {
+            question = "For Christmas, " + prompt;
+          } else {
+            question = prompt;
+          }
+          const request = {
+              "modelId": "meta.llama3-70b-instruct-v1:0",
+              "contentType": "application/json",
+              "accept": "application/json",
+              "body": `{"prompt":"${question}","max_gen_len":512,"temperature":0.5,"top_p":0.9}`
+          }
+          console.log('request',request)
 
 
         const command = new InvokeModelCommand(request);
         const response = await client.send(command);
         const completion = JSON.parse(Buffer.from(response.body).toString('utf8'));
 
-        console.log(completion);
+        answer = completion.generation;
+        setResponse(answer);
         } catch (error) {
         console.error('Error generating response:', error);
         }
@@ -67,7 +66,7 @@
 
     return (
         <div>
-        <h1>Generate Text with AWS Bedrock</h1>
+        <h1>Truly Smart NPC</h1>
         <textarea
             value={prompt}
             onChange={handlePromptChange}

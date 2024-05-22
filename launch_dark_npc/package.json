@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-agent-runtime": "^3.582.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.582.0",
     "aws-sdk": "^2.1626.0",
     "buffer": "^6.0.3",
     "launchdarkly-react-client-sdk": "^3.2.0",
